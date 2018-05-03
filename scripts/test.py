@@ -22,7 +22,7 @@ def test():
 #  WHERE author.id = book.author AND 
 #        library.id = book.library AND 
 #        genre.id = book.genre''')
-    m.cur.execute("Select * from test2 ")
+    m.cur.execute("Select * from full_cat ")
     for row in m.cur:
         print ('-'*10)
         

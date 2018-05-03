@@ -6,7 +6,7 @@ class All_book(object):
    
     def __init__(self,cur,path_db):
         """Constructor"""
-        conn = sqlite3.connect(path_db) # или :memory: чтобы сохранить в RAM
+        conn = sqlite3.connect(path_db) 
         self.cur = conn.cursor()
     def __create_lib(self):
         pass
@@ -22,10 +22,11 @@ class All_book(object):
         Close library
         """
         pass
-    
+    def Create_lib(self):
+        pass
 
 class Paper_book(All_book):
-    """Общий класс для книг"""
+    """Класс для бумажных книг"""
     
     # def __init__(self):
     #     """Constructor"""
@@ -34,6 +35,14 @@ class Paper_book(All_book):
         print('PAPER_BOOK_create_lib')
 
     
+class E_book(All_book):
+    """Класс для электронных книг"""
+    
+    # def __init__(self):
+    #     """Constructor"""
+    #     pass
+    def create_lib(self):
+        print('E_BOOK_create_lib')
 
 
 if __name__ == "__main__":
