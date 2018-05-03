@@ -1,12 +1,13 @@
-
+import sqlite3
 
 
 class All_book(object):
     """Общий класс для книг"""
-    
-    def __init__(self):
+   
+    def __init__(self,cur,path_db):
         """Constructor"""
-        pass
+        conn = sqlite3.connect(path_db) # или :memory: чтобы сохранить в RAM
+        self.cur = conn.cursor()
     def __create_lib(self):
         pass
 
@@ -26,9 +27,9 @@ class All_book(object):
 class Paper_book(All_book):
     """Общий класс для книг"""
     
-    def __init__(self):
-        """Constructor"""
-        pass
+    # def __init__(self):
+    #     """Constructor"""
+    #     pass
     def create_lib(self):
         print('PAPER_BOOK_create_lib')
 
