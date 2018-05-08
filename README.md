@@ -1,3 +1,3 @@
 Проект домашней библиотеки
 =============================
-(![Сайт программы](bookshelf.png)https://krugersu.github.io/homebib/)
+![Сайт программы](bookshelf.png)https://krugersu.github.io/homebib/
