@@ -9,20 +9,8 @@ def test():
     
     m = m_db.Paper_book(None,'data/homebook.db')
     m.Open_lib()
-#     m.cur.execute('''SELECT book.name,
-#        author.fullName,
-#        library.name AS libName,
-#        genre.name AS genreName,
-#        book.ebook,
-#        book.ypubl
-#   FROM book,
-#        author,
-#        library,
-#        genre
-#  WHERE author.id = book.author AND 
-#        library.id = book.library AND 
-#        genre.id = book.genre''')
-    m.cur.execute("Select * from full_cat ")
+
+    m.cur.execute("SELECT * FROM full_cat")
     for row in m.cur:
         print ('-'*10)
         
@@ -32,7 +20,8 @@ def test():
         print ('Жанр:', row[3])
         print ('ebook:', row[4])
         print ('Год изд.:', row[5])
-        
+        print ('серия:', row[6])
+        print ('Издательство:', row[7])
         
         print ('-'*10)
     #con.close()
