@@ -1,1 +1,15 @@
-theme: jekyll-theme-leap-day
+theme: jekyll-theme-minimal
+
+# Dependencies
+markdown:         rdiscount
+pygments:         true
+ 
+# Permalinks
+permalink:        pretty
+ 
+# Server
+destination:      _gh_pages
+host:             0.0.0.0
+port:             9001
+baseurl:          /
+encoding:         UTF-8
