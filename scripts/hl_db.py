@@ -36,8 +36,7 @@ class All_book(object):
 
     def Add_book(self,cursor,bookD):
         
-        #self.cur.execute("SELECT MAX (id_book) from book")
-        # id_book =  self.cur.fetchone()[0] + 1
+        
         # bookD[0] = id_book
         # print(bookD[0])
         # #print(book[0])
@@ -48,8 +47,17 @@ class All_book(object):
         # book = [('Наименование', 'Библиотека', 'Автор', 'Жанр', 'Ебук','ДатаПубликации', 'Серия', 'Поиск','Обложка', 'Номер в серии', 'Издательство','Тираж', 'Количество страниц', 'Описание'
         # ,'ISBN', 'ТипОбложки', 'Художник'),
           
+          
  
         self.cur.executemany('INSERT INTO book VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', bookD)
+        self.conn.commit()
+        self.cur.execute("SELECT MAX (id_book) from book")
+        id_book =  self.cur.fetchone()[0] 
+        t_genre = bookD[0][4]
+        t_author = bookD[0][3]
+        self.cur.execute('INSERT INTO book_genre (id_book,id_genre) VALUES(?, ?) ',(id_book,t_genre))
+        self.cur.execute('INSERT INTO book_author (id_book,id_author) VALUES (?, ?) ',(id_book,t_author))
+        #self.cur.execute('INSERT INTO book_translator VALUES (id_book,2)')
         self.conn.commit()
         
 
