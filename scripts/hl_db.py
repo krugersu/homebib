@@ -36,11 +36,11 @@ class All_book(object):
 
     def Add_book(self,cursor,bookD):
         
-        self.cur.execute("SELECT MAX (id_book) from book")
-        id_book =  self.cur.fetchone()[0] + 1
-        bookD[0] = id_book
-        print(bookD[0])
-        #print(book[0])
+        #self.cur.execute("SELECT MAX (id_book) from book")
+        # id_book =  self.cur.fetchone()[0] + 1
+        # bookD[0] = id_book
+        # print(bookD[0])
+        # #print(book[0])
 
         # book = [(5,'Наименование', '','' ,'' ,'' ,'','' ,'' ,'','' ,'' ,'','' , '','', '', '')]
         # book = [('','Наименование', 2, 4, 2, 0,'7/9/2002', 2, 0,'Обложка', 0, 3,100000, 256, 'Описание'
