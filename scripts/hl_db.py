@@ -50,9 +50,9 @@ class All_book(object):
           
  
         self.cur.executemany('INSERT INTO book VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', bookD)
-        self.conn.commit()
+        #self.conn.commit()
         self.cur.execute("SELECT MAX (id_book) from book")
-        id_book =  self.cur.fetchone()[0] 
+        id_book =  self.cur.fetchone()[0] +1
         t_genre = bookD[0][4]
         t_author = bookD[0][3]
         self.cur.execute('INSERT INTO book_genre (id_book,id_genre) VALUES(?, ?) ',(id_book,t_genre))
