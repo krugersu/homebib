@@ -31,7 +31,7 @@ pylint==1.8.4
 pyOpenSSL==17.5.0
 PyQt5==5.10.1
 pytils==0.3
-PyYAML==3.12
+PyYAML==5.4
 queuelib==1.5.0
 requests==2.18.4
 selection==0.0.13
